@@ -5,7 +5,7 @@ const router = express.Router();
 
 
   
-  router.post('/nosotros', function(req, res) {
+  router.post('/nosotros', (req, res) =>{
        res.json({msj: 'hola'});
      });
 

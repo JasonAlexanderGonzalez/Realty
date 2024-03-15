@@ -12,6 +12,7 @@ app.set('views', './views')  //
 
 
 app.use('/auth', usuarioRoutes);
+
 const port = 3000;  
 
 app.listen(port, () => {

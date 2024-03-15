@@ -1,4 +1,6 @@
-import express from "express";  
+import express from "express";
+import { formLogin, formRegistration } from "../controllers/usuarioController.js";   //el controlador
+
 
 const router = express.Router();
 
@@ -9,8 +11,7 @@ const router = express.Router();
      });
 
      router.route('/')     
-     router.get('/login', (req, res) => {
-      res.render('auth/login')
-    });
+     router.get('/login',formLogin);
+     router.get('/registration',formRegistration);
 
      export default router

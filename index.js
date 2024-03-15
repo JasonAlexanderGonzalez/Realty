@@ -1,18 +1,18 @@
-//const express = require('express'); //Dependecies, aca estoy usando require pero ahora usare module 
+
 import express from 'express'//estoy usando module y no require 
-import usuarioRoutes from './routes/usuarioRoutes.js'//archivos internos requieren el js
+import usuarioRoutes from './routes/usuarioRoutes.js'
 
 
 
-const app = express(); //creando la application
+const app = express();
+
+//template engine================================
+app.set('view engine', 'pug');
+app.set('views', './views')  //
 
 
-//Routing
-//app.get('/', usuarioRoutes); //con use ya no es necesario
-//app.get('/nosotros', usuarioRoutes); //con use ya no es necesario   
-  //usando use en lugar de todos los get
-app.use('/', usuarioRoutes);
-const port = 3000;  //definiendo el puerto y arrancar el proyecto
+app.use('/auth', usuarioRoutes);
+const port = 3000;  
 
 app.listen(port, () => {
     console.log(`listen en el puerto ${port}`)
